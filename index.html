@@ -381,6 +381,96 @@
             padding: 0 20px 20px;
         }
 
+        /* Why Us Section */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.15);
+        }
+
+        .benefit-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .benefit-card p {
+            color: var(--text-dark);
+        }
+
+        /* Courses Section */
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.15);
+        }
+
+        .course-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .course-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .course-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .course-card ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
         /* Футер */
         footer {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -410,6 +500,21 @@
         .social-links a:hover {
             color: var(--accent);
             transform: translateY(-3px);
+        }
+
+        /* Schedule Info */
+        .schedule-info {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: var(--secondary);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+        }
+
+        .schedule-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         /* Адаптивность */
@@ -507,8 +612,10 @@
             <ul>
                 <li><a href="#home">Головна</a></li>
                 <li><a href="#teachers">Викладачі</a></li>
+                <li><a href="#courses">Курси</a></li>
                 <li><a href="#prices">Ціни</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li><a href="#why-us">Чому ми?</a></li>
                 <li><a href="#contact">Контакти</a></li>
             </ul>
         </nav>
@@ -520,9 +627,16 @@
         <span class="emoji">🌍🎓✨</span>
         <h1 class="animate">Вивчайте мови з професіоналами <span class="emoji-wave">👩‍🏫</span></h1>
         <p class="animate delay-1">Ефективні онлайн-курси чеської та англійської мов з викладачами з Європи. Підготуємо до іспитів, співбесід та переїзду.</p>
+        
+        <div class="schedule-info animate delay-2">
+            <p>🕐 Графік занять: з 8:00 до 21:00</p>
+            <p>💻 Всі заняття проходять онлайн</p>
+            <p>📅 Постійний або змішаний графік навчання</p>
+        </div>
+        
         <div class="hero-buttons">
-            <button class="cta-button animate delay-2" onclick="scrollToSection('contact')">Безкоштовний пробний урок</button>
-            <button class="secondary-button animate delay-2" onclick="scrollToSection('teachers')">Детальніше про курси</button>
+            <button class="cta-button animate delay-2" onclick="scrollToSection('contact')">Пробний урок (50 крон)</button>
+            <button class="secondary-button animate delay-2" onclick="scrollToSection('courses')">Детальніше про курси</button>
         </div>
     </section>
 
@@ -561,6 +675,17 @@
                     <p>⏰ Ранкові/вечірні заняття</p>
                 </div>
             </div>
+            
+            <div class="teacher-card animate delay-2">
+                <div class="teacher-emoji">🌟</div>
+                <div class="teacher-info">
+                    <h3>Катерина</h3>
+                    <p>🎓 Викладач у чеському ВНЗ</p>
+                    <p>📚 Навчає з нуля до B2</p>
+                    <p>👥 Чеська для дітей та дорослих</p>
+                    <p>⏰ Змішаний графік занять</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -591,6 +716,77 @@
         </div>
     </section>
 
+    <!-- Курсы -->
+    <section id="courses">
+        <h2 class="section-title">Наші курси <span class="emoji">📚</span></h2>
+        
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Чеська мова 🇨🇿</h3>
+        <div class="courses-container">
+            <div class="course-card animate">
+                <span class="course-emoji">👧👦</span>
+                <h3>Для дітей (5-15 років)</h3>
+                <p>Допомогаємо з шкільною програмою та вивчаємо основи чеської мови</p>
+                <ul>
+                    <li>Інтерактивні заняття для дітей</li>
+                    <li>Допомога з шкільними домашніми завданнями</li>
+                    <li>Навчання через гру та спілкування</li>
+                    <li>Індивідуальний підхід до кожної дитини</li>
+                </ul>
+            </div>
+            
+            <div class="course-card animate delay-1">
+                <span class="course-emoji">👩‍💼👨‍💼</span>
+                <h3>Для дорослих</h3>
+                <p>Курси для різних рівнів підготовки та цілей</p>
+                <ul>
+                    <li>З нуля до А2 - базові знання чеської</li>
+                    <li>Чеська для роботи та повсякденного життя</li>
+                    <li>Підготовка до іспитів та співбесід</li>
+                    <li>Курс підготовки до тривалого pobytu</li>
+                </ul>
+            </div>
+            
+            <div class="course-card animate delay-2">
+                <span class="course-emoji">🎯</span>
+                <h3>Поглиблені курси</h3>
+                <p>Для тих, хто хоче досягти високого рівня володіння мовою</p>
+                <ul>
+                    <li>Рівень B1 і вище</li>
+                    <li>Підготовка до екзаменів на отримання громадянства</li>
+                    <li>Спеціалізована лексика для різних професій</li>
+                    <li>Інтенсивні курси для швидкого результату</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3 style="text-align: center; margin: 50px 0 30px; color: var(--primary);">Англійська мова 🇬🇧</h3>
+        <div class="courses-container">
+            <div class="course-card animate">
+                <span class="course-emoji">👧👦</span>
+                <h3>Для дітей</h3>
+                <p>Цікаві заняття англійською для дітей різного віку</p>
+                <ul>
+                    <li>Англійська для найменших (від 5 років)</li>
+                    <li>Допомога з шкільною програмою</li>
+                    <li>Підготовка до міжнародних іспитів для дітей</li>
+                    <li>Інтерактивні заняття та ігрова форма навчання</li>
+                </ul>
+            </div>
+            
+            <div class="course-card animate delay-1">
+                <span class="course-emoji">👩‍🎓👨‍🎓</span>
+                <h3>Для підлітків та дорослих</h3>
+                <p>Курси для різних цілей та рівнів підготовки</p>
+                <ul>
+                    <li>Загальний курс англійської (всі рівні)</li>
+                    <li>Підготовка до матури та вступних іспитів</li>
+                    <li>Підготовка до міжнародних іспитів (FCE, IELTS)</li>
+                    <li>Бізнес-англійська та професійна лексика</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Ціни -->
     <section id="prices">
         <h2 class="section-title">Наші ціни <span class="emoji">💲</span></h2>
@@ -614,7 +810,7 @@
             
             <div class="pricing-card animate delay-1">
                 <div class="pricing-emoji">👥</div>
-                <h3>Заняття в парі</h3>
+                <h3>Заняття в парі (за 2х учнів)</h3>
                 <div class="price">465 <span>крон/урок</span></div>
                 <span class="saving">💸 Економія до 1560 крон</span>
                 <ul class="pricing-features">
@@ -631,6 +827,36 @@
         </div>
     </section>
 
+    <!-- Why Us Section -->
+    <section id="why-us">
+        <h2 class="section-title">Чому обирають нас? <span class="emoji">🌟</span></h2>
+        <div class="benefits-container">
+            <div class="benefit-card animate">
+                <div class="benefit-emoji">⏰</div>
+                <h3>Зручний графік</h3>
+                <p>Заняття з 8:00 до 21:00, що дозволяє обрати оптимальний час для навчання</p>
+            </div>
+            
+            <div class="benefit-card animate delay-1">
+                <div class="benefit-emoji">💻</div>
+                <h3>Онлайн-формат</h3>
+                <p>Всі заняття проходять онлайн - не потрібно нікуди їхати, заощаджуйте час та кошти</p>
+            </div>
+            
+            <div class="benefit-card animate delay-2">
+                <div class="benefit-emoji">👩‍🏫</div>
+                <h3>Кваліфіковані викладачі</h3>
+                <p>Наші викладачі мають філологічну освіту та досвід роботи у чеських ВНЗ</p>
+            </div>
+            
+            <div class="benefit-card animate delay-3">
+                <div class="benefit-emoji">📅</div>
+                <h3>Гнучкість навчання</h3>
+                <p>Постійний або змішаний графік занять, що дозволяє поєднувати навчання з роботою та іншими справами</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq">
         <h2 class="section-title">Поширені запитання <span class="emoji">❓</span></h2>
@@ -638,14 +864,16 @@
             <div class="faq-item">
                 <div class="faq-question">Як довго триває один урок? <span class="emoji">⏱️</span></div>
                 <div class="faq-answer">
-                    <p>Стандартний урок триває 60 хвилин. Для дітей молодшого віку можливі уроки по 45 хвилин.</p>
+                    <p>Стандартний урок триває 60 хвилин.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">Чи можна скасувати заняття? <span class="emoji">❌</span></div>
                 <div class="faq-answer">
-                    <p>Так, ви можете скасувати заняття безкоштовно за 24 години до початку. При скасуванні пізніше урок зараховується.</p>
+                    <p>Так, ви можете скасувати заняття:
+                    <br>- За 6 годин до початку - стягується 50% вартості уроку
+                    <br>- Менше ніж за 1 годину - стягується 100% вартості уроку</p>
                 </div>
             </div>
             
@@ -659,14 +887,21 @@
             <div class="faq-item">
                 <div class="faq-question">Як оплатити заняття? <span class="emoji">💳</span></div>
                 <div class="faq-answer">
-                    <p>Оплата можлива банківським переказом, через PayPal або криптовалютою. Оплата проводиться у чеських кронах.</p>
+                    <p>Оплата можлива банківським переказом на чеський або український рахунок. Оплата у чеських кронах або гривнях (за курсом на день оплати).</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">Чи отримаю я сертифікат? <span class="emoji">🎓</span></div>
                 <div class="faq-answer">
-                    <p>Так, після успішного завершення курсу ви отримаєте сертифікат, який підтверджує рівень ваших знань.</p>
+                    <p>Так, після успішного завершення курсу (24 академічних години) ви отримаєте сертифікат, який підтверджує рівень ваших знань.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">З якого віку приймають дітей? <span class="emoji">👶</span></div>
+                <div class="faq-answer">
+                    <p>Ми приймаємо дітей від 5 років. Для дітей молодше 5 років заняття не проводяться.</p>
                 </div>
             </div>
         </div>
@@ -695,7 +930,17 @@
                     <option>Англійська мова 🇬🇧</option>
                 </select>
             </div>
-            <button class="cta-button" onclick="alert('Дякуємо за заявку! Ми зв\'яжемося з вами найближчим часом.')">Відправити заявку ✨</button>
+            <div class="form-group">
+                <label for="course-type">Тип курсу</label>
+                <select id="course-type">
+                    <option>Для дітей (5-15 років)</option>
+                    <option>Для дорослих (з нуля до А2)</option>
+                    <option>Поглиблений курс (B1 і вище)</option>
+                    <option>Підготовка до екзаменів</option>
+                    <option>Інше</option>
+                </select>
+            </div>
+            <button class="cta-button" onclick="alert('Дякуємо за заявку! Ми зв\'яжемося з вами найближчим часом для підтвердження пробного уроку та оплати 50 крон.')">Відправити заявку ✨</button>
         </div>
     </section>
 
@@ -703,13 +948,12 @@
     <footer>
         <div class="footer-content">
             <div class="logo-text" style="color: white;">Easy Languages in CZ</div>
-            <p>Найкраща онлайн школа чеської та англійської мови 🎓</p>
+            <p>Онлайн школа чеської та англійської мови 🎓</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/easy_languages_in_cz/"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/mariiarozanek" target="_blank"><i class="fab fa-telegram"></i></a>
             </div>
-            <p>© 2023 Easy Languages in CZ. Всі права захищені</p>
+            <p>© 2025 Easy Languages in CZ. Всі права захищені</p>
         </div>
     </footer>
 
